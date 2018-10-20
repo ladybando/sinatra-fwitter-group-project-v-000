@@ -1,3 +1,10 @@
 <h1>Welcome, <%=@user.username %></h1>
+<br></br>
+<p><%=@tweets.each do |tweet|%>
+  <%=tweet.content%></p>
+<%=end%>
 
+<% @tweets.each do |tweet| %> 
+  <li> <a href="/signup/<%= tweet.slug %>"> <%= tweet.content %> </a></li> 
+<% end %>
 <p><a href="/logout">Log Out</a></p
